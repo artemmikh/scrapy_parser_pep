@@ -24,7 +24,10 @@ class PepParsePipeline:
         return item
 
     def close_spider(self, spider):
-        filename = os.path.join(self.base_dir, 'results', f'status_summary_{spider.time}.csv')
+        filename = os.path.join(
+            self.base_dir,
+            'results',
+            f'status_summary_{spider.time}.csv')
         with open(filename, mode='w', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow(['Статус', 'Количество'])
