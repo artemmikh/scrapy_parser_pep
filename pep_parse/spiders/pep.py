@@ -16,8 +16,8 @@ class PepSpider(scrapy.Spider):
         table = response.css('section#numerical-index table')
         tbody_tr = table.css('tbody tr')
         # test
-        # for tr in tbody_tr[:5]:
-        for tr in tbody_tr:
+        for tr in tbody_tr[:5]:
+            # for tr in tbody_tr:
             link = tr.css('a.pep.reference.internal::attr(href)').get()
             yield response.follow(link, callback=self.parse_pep)
 
