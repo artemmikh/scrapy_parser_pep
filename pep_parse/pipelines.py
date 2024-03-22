@@ -26,7 +26,8 @@ class PepParsePipeline:
         filename = os.path.join(
             self.base_dir,
             'results',
-            f"status_summary_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv")
+            f"status_summary_"
+            f"{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv")
         with open(filename, mode='w', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerows([
