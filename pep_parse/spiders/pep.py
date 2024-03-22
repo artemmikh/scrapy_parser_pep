@@ -1,5 +1,3 @@
-from datetime import datetime
-
 import scrapy
 
 from pep_parse.items import PepParseItem
@@ -9,7 +7,6 @@ class PepSpider(scrapy.Spider):
     name = 'pep'
     allowed_domains = ['peps.python.org']
     start_urls = ['https://peps.python.org/']
-    time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
     def parse(self, response):
         """Cобирает ссылки на документы PEP."""

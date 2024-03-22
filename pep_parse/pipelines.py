@@ -1,5 +1,6 @@
 import csv
 import os
+from datetime import datetime
 from collections import defaultdict
 
 from pep_parse.settings import BASE_DIR
@@ -25,7 +26,7 @@ class PepParsePipeline:
         filename = os.path.join(
             self.base_dir,
             'results',
-            f'status_summary_{spider.time}.csv')
+            f"status_summary_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv")
         with open(filename, mode='w', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerows([
