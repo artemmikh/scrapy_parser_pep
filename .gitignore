@@ -143,3 +143,6 @@ dmypy.json
 # Local History for Visual Studio Code
 .history/
 draft.py
+d.py
+drafts/
+.drafts/
